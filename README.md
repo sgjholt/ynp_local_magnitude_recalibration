@@ -1,6 +1,6 @@
 Yellowstone Local Magnitude ($M_L$) Re-calibration Project
 ----------------------------------------------------------
-### By James Holt<sup>1</sup>, Dec., 2020
+### By James Holt<sup>1</sup>, Feb., 2021
 
 This project is the companion code to the following paper:
 
