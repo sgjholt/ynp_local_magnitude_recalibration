@@ -131,7 +131,9 @@ dmypy.json
 .DS_Store
 
 # Project Specific
-# .norm
-.XML
-.xml
+.norm/
+.model/
+.bts/
+*.XML
+*.xml
 
