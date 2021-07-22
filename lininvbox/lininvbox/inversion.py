@@ -14,6 +14,7 @@ from typing import Union
 from scipy.linalg import lstsq
 from scipy.sparse import coo_matrix, vstack, hstack
 from .operations import compress_matrices, apply_constraints
+from threadpoolctl import threadpool_limits
 from .constructors import DesignMatrix, DataArray, ModelArray
 from .constraints import Constraints
 from .regularisation import Regularisation
@@ -123,7 +124,8 @@ class Inversion():
 
             GTG, GTd = apply_constraints(GTG, GTd, F, h)
 
-        invout = lstsq(GTG.toarray(), GTd.toarray())
+        with threadpool_limits(limits=1, user_api='blas'):
+            invout = lstsq(GTG.toarray(), GTd.toarray())
 
         m = ModelArray(G.term_map, invout[0])
 

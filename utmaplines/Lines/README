@@ -1,0 +1,68 @@
+Directory /utahnet/Plotfiles/Lines:
+
+This directory contains miscellaneous line files of political boundaries and
+geographic features for use in plotting maps with qplot.  Lines files for
+faults are kept in the directory /utahnet/Plotfiles/Faults.
+
+bearlk.l :    Shoreline of Bear Lake, digitized from the Ogden and Preston USGS
+              AMS sheets, scale 1:250,000.
+
+lakes.l :     Shorelines of Bear Lake, the Great Salt Lake, and Utah Lake
+              catted together into one file
+
+saltlk.l :    Shoreline of the Great Salt Lake, digitized from a 1984 Landsat
+              image.  The lake levels were 4205 feet elevation north of the
+              railroad causeway and 4209 feet elevation south of the railroad
+              causeway.  Scale of image is 1:125,000.
+
+scoll.l :     Outlines of the Supercollider rings at Utah's two proposed sites
+
+utahlk.l :    Shoreline of Utah Lake, digitized from the Salt Lake City USGS AMS
+              sheet, scale 1:250,000.
+
+utborder.l :  The Utah state border
+
+westpond.l :  Outline of West Pond, the artificial lake created in 1987
+              by the west desert pumping project (alias 'Lake Bangerter')
+              The lake is shown at its maximum elevation of 4217 feet above
+              sea level, and was digitized from a 1:500,000 scale map
+              provided by Ben Everitt of the Utah Department of Water Resources.
+              (Figure is the same, except for scale, as Figure 9 of 'Lake
+              level control options for the Great Salt Lake', by D.L. Anderson
+              and P.C. Summers, in Cenozoic Geology of Western Utah, R.S. Kopp
+              and R.E. Cohenour, Editors, Utah Geological Association Publica-
+              tion 16, 1987.)
+
+wusbomap.l :  State boundary file for the western United States
+
+wconv.f:      Program to convert eqplot boundary file format to qplot line
+              file format
+
+flaming.gorge: Outline of Flaming Gorge, Reservoir, Utah, Wyoming border area.
+               Digitized from 1:500,000 series state maps.
+
+palisades.res: Outline of Palisades Reservoir located on the Idaho/Wyoming
+               border. Digitized from the 1:500,000 series state maps.
+
+lake.powell:   Outline of Lake Powell located on the Utah/Arizona border. 
+               Digitized from the 1:500,000 series state maps.
+
+lake.mead:     Outline of Lake Mead, Nevada. Digitized from the 1:500,000
+               series state maps.
+
+clarkcan.res:  Outline of Clark Canyon Reservoir, Montana. Digitized from the 
+               1:500,000 series state map.
+
+flathead.lake: Outline of Flathead Lake, Montana. Digitized from the 1:500,000
+               series state map.
+
+County_bounds_Utah: Directory containing digitized county lines for the State
+                    of Utah.
+
+ut.counties.all:  digitized counties in the state of Utah (all counties in
+                directory County_bounds_Utah catted together to make this file.
+
+                                           -Sue Nava
+                                            January 3,1994
+                                           -Jim Pechmann
+                                            April 25, 1988

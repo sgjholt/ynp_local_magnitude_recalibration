@@ -17,9 +17,18 @@ functions:
         fields.
 
 """
+import shutil
 import numpy as np
 from datetime import datetime
 from collections import OrderedDict
+
+
+def delete_directory(dir_path: str) -> None:
+
+    try:
+        shutil.rmtree(dir_path)
+    except OSError as e:
+        print("Error: %s : %s" % (dir_path, e.strerror))
 
 
 def build_base_term_map() -> OrderedDict:
@@ -48,7 +57,6 @@ def build_base_term_map() -> OrderedDict:
                                         raw_labels=np.array([]),
                                         model_indices=np.array([]),
                                         model_values=np.array([]),
-                                        model_residuals=np.array([]),
                                         sign=np.array([1, ], dtype=int),
                                         kind="",
                                         constraints={},

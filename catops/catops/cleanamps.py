@@ -24,7 +24,8 @@ def fill_legacy_snr(df:pd.DataFrame,
     The legacy data has no SNR information.
     This will pad the value to 2 if it is NaN.
 
-    Returns: None
+    Returns 
+        None
     """
     df.loc[df.Evid.astype(str).str.startswith("5"), ['SnrE', 'SnrN']] = snr_pad
 
@@ -33,7 +34,8 @@ def convert_cm_to_mm(df:pd.DataFrame) -> None:
     Multiply any row amplitude entry corresponding to cm by 10
     to get mm. Then convert the cm entry to mm
 
-    Returns None
+    Returns: 
+        None
     """
     for en in ['E','N']:
         df.loc[df[f"Un{en}"] == "cm", f"Amp{en}"] *= 10
@@ -46,7 +48,8 @@ def clean_comp_cols(df:pd.DataFrame) -> None:
     since the amps for N and E are labeled in separate columns
     in the same row.
 
-    Returns: None
+    Returns: 
+        None
     """
     df["Cmp"] = df["Cmp"].str[:-1]
 
@@ -59,6 +62,16 @@ def adjust_depth_to_average_elevation(df: pd.DataFrame) -> None:
     Returns: None
     """
     df['EqDep'] += C.AVERAGE_SURFACE_ELEVATION
+
+def recompute_rhyp(df: pd.DataFrame) -> None:
+    """
+    There is an issue with the hypocentral distances in the original 
+    catalog. Regardless, there is a minor incompatibility because
+    we adjust the depths to an average surface elevation. Therefore,
+    we should recompute rhyp (using the new depths) to account for 
+    this difference.
+    """
+    df['Rhyp'] = np.sqrt(df['Repi'].values**2 + df['EqDep']**2)
 
 ## Funcs that remove 'bad' data based on arbitrary conditions
 # some perform inplace operations and others that might require closer
@@ -87,7 +100,8 @@ def remove_snr_below_thresh(df:pd.DataFrame) -> None:
     Returns: None
     """
     SNR = C.MINIMUM_SNR
-    df.drop(((df.loc[df['SnrE'] < SNR].index)&(df.loc[df['SnrN'] < SNR].index)), inplace=True)
+    df.drop(((df.loc[df['SnrE'] < SNR].index)&(df.loc[df['SnrN'] < SNR].index)), 
+        inplace=True)
     df.reset_index(drop=True, inplace=True)
 
 def remove_near_amps_w_bad_focal_dep(df:pd.DataFrame) -> pd.DataFrame:

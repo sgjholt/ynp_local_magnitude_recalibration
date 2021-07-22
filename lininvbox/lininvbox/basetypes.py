@@ -80,8 +80,9 @@ class Matrix():
             msg = "Allocation function must return three np.ndarrays as a" +\
                 "tuple of values, row numbers and column numbers"
             raise ValueError(msg)
-
-        tmat = coo_matrix((vals, (rows, cols)), shape=shape)
+        # TODO Figure out why vals sometimes has shape 1, N and not just flat.
+        tmat = coo_matrix(
+            (vals.flatten(), (rows.flatten(), cols.flatten())), shape=shape)
 
         if not inplace:
             return tmat

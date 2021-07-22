@@ -1,0 +1,8 @@
+Correct alignment for Qplot header files
+assuming FORL is set as follows:
+FORL  1 '(f8.4,1x,f9.4)'
+
+123456781123456789
+latitude longitude
+ xx.xxxx  xxx.xxxx
+ 44.1234  111.1234
