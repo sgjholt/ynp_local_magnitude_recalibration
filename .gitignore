@@ -132,7 +132,6 @@ dmypy.json
 
 # Project Specific
 .norm/
-.model/
 .bts/
 *.XML
 *.xml
