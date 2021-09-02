@@ -35,22 +35,36 @@ def clear_issues(df: pd.DataFrame,
 
 def dataframe_difference(df1: pd.DataFrame,
                          df2: pd.DataFrame,
-                         which=None,
+                         which: str = 'both',
                          ) -> pd.DataFrame:
-    """Find rows which are different between two DataFrames."""
+    """Returns the table that contains the set of elements that do 
+    not overlap between two dataframes.
+
+    Args:
+        df1 (pd.DataFrame): The first DataFrame object.
+        df2 (pd.DataFrame): The second DataFrame object.
+        which (str, optional): The argument of the set comparison. 
+            Defaults to 'both'.
+
+    Returns:
+        pd.DataFrame: [description]
+    """
     comparison_df = df1.merge(
         df2,
         indicator=True,
         how='outer'
     )
-    if which is None:
-        diff_df = comparison_df[comparison_df['_merge'] != 'both']
-    else:
-        diff_df = comparison_df[comparison_df['_merge'] == which]
+    diff_df = comparison_df[comparison_df['_merge'] != which]
+
     return diff_df
 
 
 def print_catalog_stats(df: pd.DataFrame) -> None:
+    """Print the earthquake and amplitude count of a given DataFrame.
+
+    Args:
+        df (pd.DataFrame): The DataFrame of interest.
+    """
     EqCount = len(df['Evid'].unique())
     AmpCount = len(df)
     print(f"The catalog contains {AmpCount} amplitudes from {EqCount} earthquakes.")
@@ -60,6 +74,12 @@ def quick_inspect_magnitude_distance(df: pd.DataFrame,
                                      save: Union[str, bool] = False,
                                      **kwargs
                                      ) -> None:
+    """[summary]
+
+    Args:
+        df (pd.DataFrame): [description]
+        save (Union[str, bool], optional): [description]. Defaults to False.
+    """
     inspec = df.copy(deep=True)
     inspec = inspec[inspec.CatMag != -9.99]
     M, Dist, Dep, A = inspec.CatMag, inspec.Rhyp, inspec.drop_duplicates(

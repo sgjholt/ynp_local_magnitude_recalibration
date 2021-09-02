@@ -13,14 +13,26 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 def quick_inspect_amplitudes(N: np.array,
                              E: np.array,
                              C: np.array,
-                             s=1,
-                             logx=False,
-                             logy=False,
-                             loglog=False,
-                             cmap='viridis',
+                             s: int = 1,
+                             logx: bool = False,
+                             logy: bool = False,
+                             loglog: bool = False,
+                             cmap: str = 'viridis',
                              **kwargs
                              ) -> None:
-    """This functions requires the """
+    """A utility function to quickly visualise the distribution
+    of the WA p-p amplitudes on the N and E components. 
+
+    Args:
+        N (np.array): The p-p WA amplitudes in mm measured on the North component.
+        E (np.array): The p-p WA amplitudes in mm measured on the North component.
+        C (np.array): [description]
+        s (int, optional): [description]. Defaults to 1.
+        logx (bool, optional): [description]. Defaults to False.
+        logy (bool, optional): [description]. Defaults to False.
+        loglog (bool, optional): [description]. Defaults to False.
+        cmap (str, optional): [description]. Defaults to 'viridis'.
+    """
     # computations needed later
     s_scale = s
     diff = N - E
@@ -63,8 +75,16 @@ def magnitude_distance_plot(M: np.array,
                             Dep: np.array,
                             A: np.array
                             ) -> None:
-    """
+    """Plot the event magnitude (M) versus distance relationship,
+    with the relevent side distributions. Bonus, also plots
+    the depth distribution of causitive events, which is also of 
+    interest.
 
+    Args:
+        M (np.array): The event magnitudes.
+        Dist (np.array): The source reciever distance (Rhyp or Repi, km).
+        Dep (np.array): The focal depths of the events (km).
+        A (np.array): The half p-p WA horizontal amplitude (mm).
     """
     hkwargs = dict(bottom=0.0, color='.8', edgecolor='k', rwidth=0.8,
                    weights=np.zeros_like(Dist) + 1. / len(Dist)
@@ -91,7 +111,7 @@ def magnitude_distance_plot(M: np.array,
 
     ax2.set_xscale('log')
     ax2.set_ylabel('Cat. Mag.')
-    ax2.set_xlabel('Hypo. Dist. [km]')
+    ax2.set_xlabel(r'$R_{hyp}$ [km]')
 
     ax2.xaxis.set_major_formatter(ticker.FuncFormatter(
         lambda y, pos: ('{{:.{:1d}f}}'.format(int(
@@ -119,7 +139,7 @@ def magnitude_distance_plot(M: np.array,
 
     cbaxes = inset_axes(ax2, width="35%", height="3%", loc=2)
     cbar = fig.colorbar(sout, cax=cbaxes, orientation="horizontal")
-    cbar.set_label(r"$\mathrm{log_{10}}(A[mm]$)", rotation=0,
+    cbar.set_label(r"$\mathrm{log(A [mm]}$)", rotation=0,
                    fontsize=14, horizontalalignment='center')
 
 
@@ -128,7 +148,13 @@ def spatial_distribution_plot(Lon: np.array,
                               Lat: np.array,
                               Dep: np.array
                               ) -> None:
+    """[summary]
 
+    Args:
+        Lon (np.array): [description]
+        Lat (np.array): [description]
+        Dep (np.array): [description]
+    """
     hkwargs = dict(bottom=0.0, color='.8', edgecolor='k', rwidth=0.8,
                    weights=np.zeros_like(Lon) + 1. / len(Lon))
 
