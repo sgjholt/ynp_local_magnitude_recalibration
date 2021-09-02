@@ -5,7 +5,7 @@ Yellowstone Local Magnitude ($M_L$) Recalibration Project
 This repo hosts the companion code to the following paper:
 
 ## Recalibration of the Local Magnitude ($M_L$) Scale for Earthquakes in the Yellowstone Volcanic Region (*in prep*).
-*To be submitted to the Bulletin of the Seismological Society of America (BSSA) in 2021.*
+*Under review at the Bulletin of the Seismological Society of America (BSSA) as of Aug 2021.*
 
 Holt. J.<sup>1</sup>, K. D. Koper<sup>1</sup>, and J. C. Pechmann<sup>1</sup>, 
 
