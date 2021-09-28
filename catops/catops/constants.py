@@ -3,8 +3,7 @@ This module contains a set of constant values that are relevent to formatting
 and cleaning the database.
 """
 
-
-class CleanConstants():
+class CleanConstants:
 
     LEGACY_PAD_SNR = 2
     MINIMUM_SNR = 2
@@ -20,7 +19,7 @@ class CleanConstants():
 
 
 # reduce in lat lon and dep
-class GeoBalanceConstants():
+class GeoBalanceConstants:
 
     LON_MIN = -113.5
     LON_MAX = -109
@@ -39,7 +38,7 @@ class GeoBalanceConstants():
 
 # reduce in lat lon only
 
-# class GeoBalanceConstants():
+# class GeoBalanceConstants:
 
 #     LON_MIN = -113.5
 #     LON_MAX = -109
