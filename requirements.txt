@@ -58,7 +58,7 @@ pillow>=8.3.2
 pip==21.1
 poyo==0.5.0
 prometheus-client==0.9.0
-prompt-toolkit==3.0.8
+prompt-toolkit==3.0.36
 ptyprocess==0.6.0
 pycparser==2.20
 Pygments==2.7.4
