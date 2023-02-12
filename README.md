@@ -12,3 +12,11 @@ Holt. J.<sup>1</sup>, J.C. Pechmann<sup>1</sup>, and K.D. Koper<sup>1</sup>
 
 
 1. University of Utah Seismograph Stations / University of Utah, Dept. of Geophysics
+
+## Notes
+
+| :warning: WARNING          |
+|:---------------------------|
+| This repo is not actively maintained. |
+
+I have set up dependabot to automatically trigger PRs to ensure that the dependencies have the latest security updates. That said, those updates may have broken the dependencies. This may require you to play around with the package versions in `requirements.txt`. I recommend starting with the most well maintained packages first (e.g., `scipy`, `numpy`, `pandas`, etc.).
