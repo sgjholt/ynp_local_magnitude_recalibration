@@ -90,7 +90,7 @@ threadpoolctl==2.1.0
 tornado==6.1
 traitlets==5.0.5
 urllib3==1.26.5
-voila==0.2.6
+voila==0.5.2
 wcwidth==0.2.5
 webencodings==0.5.1
 wheel==0.41.2
