@@ -56,7 +56,7 @@ ipywidgets==8.1.5
 widgetsnbextension==4.0.13
 
 # Notebook conversion and formatting
-nbconvert==7.16.4
+nbconvert>=7.16.6
 nbformat==5.10.4
 nbclient==0.10.0
 mistune==3.0.2
