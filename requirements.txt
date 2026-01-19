@@ -41,7 +41,7 @@ obspy==1.4.2
 # Jupyter notebook and server
 notebook==7.5.0
 jupyter-server==2.14.2
-jupyter-client==8.6.3
+jupyter-client==8.8.0
 jupyter-core==5.8.1
 jupyter-console==6.6.3
 jupyterlab-pygments==0.3.0
