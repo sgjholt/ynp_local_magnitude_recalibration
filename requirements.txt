@@ -97,7 +97,7 @@ pytz==2024.2
 
 # Password hashing
 argon2-cffi==23.1.0
-argon2-cffi-bindings==21.2.0
+argon2-cffi-bindings==25.1.0
 
 # File utilities
 Send2Trash==1.8.3
