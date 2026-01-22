@@ -1,7 +1,7 @@
 # Core build and package management
 pip==25.3
 setuptools==78.1.1
-wheel==0.45.1
+wheel==0.46.2
 
 # Security and crypto
 certifi==2024.8.30
