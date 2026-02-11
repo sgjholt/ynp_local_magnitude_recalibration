@@ -133,7 +133,7 @@ prometheus-client==0.21.0
 terminado==0.18.1
 
 # Image processing (updated for security)
-pillow==11.0.0
+pillow==12.1.1
 
 # Binary parsers
 cffi==2.0.0
