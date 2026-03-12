@@ -64,7 +64,7 @@ bleach==6.1.0
 pandocfilters==1.5.1
 
 # Web server
-tornado==6.5
+tornado==6.5.5
 voila==0.5.8
 
 # Terminal and prompt
