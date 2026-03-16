@@ -6,7 +6,7 @@ wheel==0.45.1
 # Security and crypto
 certifi==2024.8.30
 cryptography==46.0.3
-pyOpenSSL==25.3.0
+pyOpenSSL==26.0.0
 
 # Networking and HTTP
 requests==2.32.4
