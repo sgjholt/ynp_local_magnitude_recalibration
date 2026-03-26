@@ -9,7 +9,7 @@ cryptography==46.0.3
 pyOpenSSL==25.3.0
 
 # Networking and HTTP
-requests==2.32.4
+requests==2.33.0
 urllib3==2.6.3
 idna==3.10
 
