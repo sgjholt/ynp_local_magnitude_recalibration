@@ -74,7 +74,7 @@ pexpect==4.9.0
 wcwidth==0.2.13
 
 # Syntax highlighting
-Pygments==2.18.0
+Pygments==2.20.0
 
 # Traits and configuration
 traitlets==5.14.3
